@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Test blog</a></h1>
         </div>
-
-        <div>
-            <p>published: In the past</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Filler</p>
-        </div>
-
-        <div>
-            <p>published: Not in the future</p>
-            <h2><a href="">My second post</a></h2>
-            <p>More filler</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p><i>published: {{ post.published_date }}</i></p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
