@@ -38,3 +38,6 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'danblog/post_edit.html', {'form': form})
+
+def easter_egg(request):
+    return render(request, 'danblog/easter.html')
